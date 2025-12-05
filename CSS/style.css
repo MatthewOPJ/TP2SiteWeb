@@ -116,3 +116,13 @@
     padding: 10px;
     display: block; 
 }
+
+
+
+#fabricateurGateau {
+    background-color: lightgray;
+}
+
+#affichageGateau {
+    width: 48%;
+}

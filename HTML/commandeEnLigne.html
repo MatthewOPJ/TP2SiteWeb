@@ -22,6 +22,46 @@
         </ul>
     </nav>
 
+    <div>
+        <div id="affichageGateau">
+            <img src="../images/base_chocolat.png">
+        </div>
+
+        <form id="fabricateurGateau">
+            <label for="saveurDeBaseChoisie">Saveur de base</label>
+            <select id="saveurDeBaseChoisie" name="Fonction">
+                <option value="Vanille">Vanille</option>
+                <option value="Chocolat">Chocolat</option>
+            </select><br>
+
+            <label for="saveurDeGlacageChoisie">Saveur de glacage</label>
+            <select id="saveurDeGlacageChoisie" name="Fonction">
+                <option value="Vanille">Vanille</option>
+                <option value="Chocolat">Chocolat</option>
+                <option value="Fraise">Fraise</option>
+            </select><br>
+
+            <input type="checkbox" id="cremeFouettee" name="cremeFouettee" value="1">
+            <label for="cremeFouettee">Crème fouèttée</label><br>
+
+            <input type="checkbox" id="cerise" name="cerise" value="2">
+            <label for="cerise">Cerise</label><br>
+
+            <label for="nomPrenom">Nom et prénom</label>
+            <input type="text" id="nomPrenom" name="nomPrenom" placeholder="Gérard smith">
+            
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" placeholder=""><br><br>
+
+
+            <button id="btnAnnuler" class="btn">Annuler</button>
+            <button id="btnCommander" class="btn">Commander</button>
+        </form>
+    </div>
+
+
+
+
     <div class="footer">
         <h2>300, allée des Ursulines</h2>
         <ul class="liensFooter">
