@@ -5,3 +5,30 @@
 #affichageGateau {
     width: 48%;
 }
+
+
+.img1 {
+  z-index: 1;
+  margin-top: 200px;
+}
+
+.img2 {
+  position: relative;
+  z-index: 2;
+  top: -250px;
+  left: -31%;
+  width: 1%;
+  height: 1%;
+  scale: 80;
+}
+
+.img3 {
+  position: relative;
+  z-index: 3;
+  top: -200px;
+  left: -31%;
+  scale: 10;
+  rotate: -30deg;
+  width: 1%;
+  height: 1%;
+}
