@@ -3,18 +3,18 @@
 {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding/border are included in element's total width */
+    box-sizing: border-box; 
 }
 
 .barreDeNavigation 
 {
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Vertically centers the items */
-    justify-content: space-between; /* Pushes logo to left, links to right */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
     background-color: #fabe82;
     color: white;
     padding: 50px 50px;
-    height: 60px; /* Optional fixed height */
+    height: 60px; /
 }
 
 .logo
@@ -28,7 +28,7 @@
     color: black;
     padding: 15px;
     text-decoration: none;
-    font-size: 1.5rem; /* Larger font size for the logo */
+    font-size: 1.5rem; 
     font-weight: bold;
 }
 
