@@ -32,13 +32,13 @@
     font-weight: bold;
 }
 
-.liens 
+.liensNav 
 {
     list-style-type: none; 
     display: flex; 
 }
 
-.liens li a 
+.liensNav li a 
 {
     border: 4px solid #ff8000;
     color: black;
@@ -49,7 +49,7 @@
     transition: background-color 0.3s; 
 }
 
-.liens li a:hover 
+.liensNav li a:hover 
 {
     background-color: #fc8c1c; 
 }
@@ -96,7 +96,23 @@
     align-items: center; 
     justify-content: space-between; 
     background-color: #fabe82;
-    color: white;
+    color: black;
     padding: 50px 50px;
-    height: 80px;
+    height: 100px;
+}
+
+.liensFooter
+{
+    list-style-type: none; 
+    display: flex; 
+}
+
+.liensFooter li a 
+{
+    font-size: 40px;
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 10px;
+    display: block; 
 }
