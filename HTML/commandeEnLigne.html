@@ -43,9 +43,9 @@
             <label for="saveurDeGlacageChoisie">Saveur de glacage</label><br>
             <select id="saveurDeGlacageChoisie" onchange="changeImage()">
                 <option value="Vide"></option>
-                <option value="Vanille">Vanille</option>
-                <option value="Chocolat">Chocolat</option>
-                <option value="Fraise">Fraise</option>
+                <option value="vanille">Vanille</option>
+                <option value="chocolat">Chocolat</option>
+                <option value="fraise">Fraise</option>
             </select><br>
 
             <input type="checkbox" id="cremeFouettee" name="cremeFouettee" onchange="changeCremeFouettee()">
@@ -60,8 +60,8 @@
             <label for="adresse">Adresse</label>
             <input type="text" id="adresse" name="adresse" placeholder=""><br><br>
 
-            <button id="btnAnnuler" class="btn">Annuler</button>
-            <button id="btnCommander" class="btn">Commander</button>
+            <button type="button" id="btnAnnuler" class="btn" onclick="annuler()">Annuler</button>
+            <button type="button" id="btnCommander" class="btn" onclick="commander()">Commander</button>
         </form>
     </div>
 

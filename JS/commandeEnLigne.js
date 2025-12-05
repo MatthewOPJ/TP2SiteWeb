@@ -10,17 +10,24 @@ function changeImage(){
 
     // Construct the new image filename/path
     // This assumes your images are named consistently, e.g., "images/red_square.png"
-    var newImageSrc = "../images/base_" + valeurSaveur + ".png";
-    var imgGlacage = "../images/base_" + valeurSaveur + "_glacage_" + valeurGlacage + ".png";
+    console.log(valeurGlacage);
+    var newImageSrc;
 
-    // check if file exists and dont change if it doesnt
+    if(valeurSaveur == "Vide"){
+        newImageSrc = "";
+    } else {
+        if(valeurGlacage == "Vide"){
+            newImageSrc = "../images/base_" + valeurSaveur + ".png";
+        } else {
+            newImageSrc = "../images/base_" + valeurSaveur + "_glacage_" + valeurGlacage + ".png";
+        }
+    }
 
-    image.src = imgGlacage;
+    image.src = newImageSrc;
 }
 
 function changeCerise(){
     var image = document.getElementById("imgCerise");
-    console.log(document.getElementById("cerise").checked)
 
     if(document.getElementById("cerise").checked){
         image.src = "../images/cerise.png";
@@ -31,11 +38,37 @@ function changeCerise(){
 
 function changeCremeFouettee(){
     var image = document.getElementById("imgCremeFouettee");
-    console.log(document.getElementById("cremeFouettee").checked)
 
     if(document.getElementById("cremeFouettee").checked){
         image.src = "../images/creme_fouettee.png";
     } else {
         image.src = "";
     }
+}
+
+function annuler(){
+    document.getElementById("saveurDeBaseChoisie").value = "Vide";
+    document.getElementById("saveurDeGlacageChoisie").value = "Vide";
+
+    changeImage();
+
+    document.getElementById("cerise").checked = false;
+
+    changeCerise();
+
+    document.getElementById("cremeFouettee").checked = false;
+
+    changeCremeFouettee();
+
+    document.getElementById("nomPrenom").value = "";
+    document.getElementById("adresse").value = "";
+}
+
+
+function commander(){
+    
+
+
+
+
 }
