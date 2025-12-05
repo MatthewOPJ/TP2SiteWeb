@@ -23,21 +23,23 @@
         </ul>
     </nav>
 
-    <div>
-        <div id="affichageGateau">
+    <div id="commande">
+        <div id="affichageGateau" class="imageStack">
             <img src="../images/base_chocolat.png" class="img1">
             <img src="../images/creme_fouettee.png" class="img2">
             <img src="../images/cerise.png" class="img3">
         </div>
 
         <form id="fabricateurGateau">
-            <label for="saveurDeBaseChoisie">Saveur de base</label>
+            <h2>Faire vos choix</h2>
+
+            <label for="saveurDeBaseChoisie">Saveur de base</label><br>
             <select id="saveurDeBaseChoisie" name="Fonction">
                 <option value="Vanille">Vanille</option>
                 <option value="Chocolat">Chocolat</option>
             </select><br>
 
-            <label for="saveurDeGlacageChoisie">Saveur de glacage</label>
+            <label for="saveurDeGlacageChoisie">Saveur de glacage</label><br>
             <select id="saveurDeGlacageChoisie" name="Fonction">
                 <option value="Vanille">Vanille</option>
                 <option value="Chocolat">Chocolat</option>
@@ -55,7 +57,6 @@
             
             <label for="adresse">Adresse</label>
             <input type="text" id="adresse" name="adresse" placeholder=""><br><br>
-
 
             <button id="btnAnnuler" class="btn">Annuler</button>
             <button id="btnCommander" class="btn">Commander</button>
