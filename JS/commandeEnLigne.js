@@ -65,7 +65,21 @@ function annuler(){
 }
 
 
+
+
+
 function commander(){
+    const commande = {
+        id: 0,
+        base: document.getElementById("saveurDeBaseChoisie").value,
+        glacage: document.getElementById("saveurDeGlacageChoisie").value,
+        cerise: document.getElementById("cerise").checked,
+        cremeFouettee: document.getElementById("cremeFouettee").checked,
+        date: Date.now(),
+        nom: document.getElementById("nomPrenom").value,
+        adresse: document.getElementById("adresse").value
+    };
+
     
 
 
