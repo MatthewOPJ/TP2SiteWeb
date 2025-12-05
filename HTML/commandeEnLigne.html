@@ -25,34 +25,33 @@
 
     <div id="commande">
         <div id="affichageGateau" class="imageStack">
-            <!-- <img src="../images/base_chocolat.png" class="img1">
-            <img src="../images/creme_fouettee.png" class="img2">
-            <img src="../images/cerise.png" class="img3"> -->
-            <img id="changeImage">
+            <img src="" id="imgBase">
+            <img src="" id="imgCremeFouettee">
+            <img src="" id="imgCerise">
         </div>
 
         <form id="fabricateurGateau">
             <h2>Faire vos choix</h2>
 
             <label for="saveurDeBaseChoisie">Saveur de base</label><br>
-            <select id="saveurDeBaseChoisie" name="Fonction" onchange="changeImage()">
+            <select id="saveurDeBaseChoisie" onchange="changeImage()">
                 <option value="Vide"></option>
                 <option value="vanille">Vanille</option>
                 <option value="chocolat">Chocolat</option>
             </select><br>
 
             <label for="saveurDeGlacageChoisie">Saveur de glacage</label><br>
-            <select id="saveurDeGlacageChoisie" name="Fonction">
+            <select id="saveurDeGlacageChoisie" onchange="changeImage()">
                 <option value="Vide"></option>
                 <option value="Vanille">Vanille</option>
                 <option value="Chocolat">Chocolat</option>
                 <option value="Fraise">Fraise</option>
             </select><br>
 
-            <input type="checkbox" id="cremeFouettee" name="cremeFouettee" value="1">
+            <input type="checkbox" id="cremeFouettee" name="cremeFouettee" onchange="changeCremeFouettee()">
             <label for="cremeFouettee">Crème fouèttée</label><br>
 
-            <input type="checkbox" id="cerise" name="cerise" value="2">
+            <input type="checkbox" id="cerise" name="cerise" onchange="changeCerise()">
             <label for="cerise">Cerise</label><br>
 
             <label for="nomPrenom">Nom et prénom</label>
