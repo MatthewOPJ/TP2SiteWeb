@@ -25,19 +25,20 @@
 
     <div id="commande">
         <div id="affichageGateau" class="imageStack">
-            <img src="../images/base_chocolat.png" class="img1">
+            <!-- <img src="../images/base_chocolat.png" class="img1">
             <img src="../images/creme_fouettee.png" class="img2">
-            <img src="../images/cerise.png" class="img3">
+            <img src="../images/cerise.png" class="img3"> -->
+            <img id="changeImage">
         </div>
 
         <form id="fabricateurGateau">
             <h2>Faire vos choix</h2>
 
             <label for="saveurDeBaseChoisie">Saveur de base</label><br>
-            <select id="saveurDeBaseChoisie" name="Fonction">
+            <select id="saveurDeBaseChoisie" name="Fonction" onchange="changeImage()">
                 <option value="Vide"></option>
-                <option value="Vanille">Vanille</option>
-                <option value="Chocolat">Chocolat</option>
+                <option value="vanille">Vanille</option>
+                <option value="chocolat">Chocolat</option>
             </select><br>
 
             <label for="saveurDeGlacageChoisie">Saveur de glacage</label><br>
@@ -64,9 +65,6 @@
             <button id="btnCommander" class="btn">Commander</button>
         </form>
     </div>
-
-
-
 
     <div class="footer">
         <h2>300, allée des Ursulines</h2>
