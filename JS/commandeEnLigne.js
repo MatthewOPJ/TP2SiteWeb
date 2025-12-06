@@ -66,9 +66,7 @@ function annuler(){
 
 
 
-
-
-function commander(){
+async function commander(){
     const commande = {
         id: 0,
         base: document.getElementById("saveurDeBaseChoisie").value,
@@ -80,9 +78,15 @@ function commander(){
         adresse: document.getElementById("adresse").value
     };
 
-    
+    console.log(commande);
 
+    const reponse = await fetch("http://localhost:3000/commande", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(commande)
+    });
 
+    const resultat = await reponse.json();
 
-
+    alert(resultat.message);
 }
