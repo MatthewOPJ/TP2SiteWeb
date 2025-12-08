@@ -38,7 +38,7 @@ app.delete("/commandes/:id", (req, res) => {
 
 app.post("/commande", (req, res) => {
     res.json({
-        message: "Commande faite!"
+        message: "Commande effectuée!"
     });
     
     if(donnees.length != 0)

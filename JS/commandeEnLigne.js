@@ -1,17 +1,17 @@
 function changeImage(){
     // Get the select elements and the image element
-    var saveurDeBaseChoisie = document.getElementById("saveurDeBaseChoisie");
-    var saveurDeGlacageChoisie = document.getElementById("saveurDeGlacageChoisie");
-    var image = document.getElementById("imgBase");
+    let saveurDeBaseChoisie = document.getElementById("saveurDeBaseChoisie");
+    let saveurDeGlacageChoisie = document.getElementById("saveurDeGlacageChoisie");
+    let image = document.getElementById("imgBase");
 
     // Get the selected values
-    var valeurSaveur = saveurDeBaseChoisie.value;
-    var valeurGlacage = saveurDeGlacageChoisie.value;
+    let valeurSaveur = saveurDeBaseChoisie.value;
+    let valeurGlacage = saveurDeGlacageChoisie.value;
 
     // Construct the new image filename/path
     // This assumes your images are named consistently, e.g., "images/red_square.png"
     console.log(valeurGlacage);
-    var newImageSrc;
+    let newImageSrc;
 
     if(valeurSaveur == "Vide"){
         newImageSrc = "";
@@ -24,10 +24,17 @@ function changeImage(){
     }
 
     image.src = newImageSrc;
+    // mettre à jour les options supplémentaires
+    changeCremeFouettee();
 }
 
 function changeCerise(){
-    var image = document.getElementById("imgCerise");
+    let image = document.getElementById("imgCerise");
+
+    if(!document.getElementById("cremeFouettee").checked){
+        //alert("la cerise n'est disponible qu'avec de la crème fouettée!");
+        document.getElementById("cerise").checked = false;
+    }
 
     if(document.getElementById("cerise").checked){
         image.src = "../images/cerise.png";
@@ -37,11 +44,17 @@ function changeCerise(){
 }
 
 function changeCremeFouettee(){
-    var image = document.getElementById("imgCremeFouettee");
+    let image = document.getElementById("imgCremeFouettee");
+    let base = document.getElementById("saveurDeBaseChoisie").value;
+    if(base == "Vide"){
+        document.getElementById("cremeFouettee").checked = false;
+    }
 
     if(document.getElementById("cremeFouettee").checked){
         image.src = "../images/creme_fouettee.png";
     } else {
+        // mettre à jour la cerise
+        changeCerise();
         image.src = "";
     }
 }
@@ -78,7 +91,22 @@ async function commander(){
         adresse: document.getElementById("adresse").value
     };
 
-    console.log(commande);
+    // commande valide?
+    if(commande.base == "Vide"){
+        alert("Veuillez sélectionner une base.");
+        return;
+    }
+
+    if(commande.nom == ""){
+        alert("Veuillez entrer un nom et prénom.");
+        return;
+    }
+
+    if(commande.adresse == ""){
+        alert("Veuillez entrer une adresse valide.");
+        return;
+    }
+
 
     const reponse = await fetch("http://localhost:3000/commande", {
         method: "POST",
