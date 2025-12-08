@@ -117,6 +117,8 @@ async function commander(){
     const resultat = await reponse.json();
 
     alert(resultat.message);
+
+    annuler();
 }
 
 function calculerPrix(commande)
