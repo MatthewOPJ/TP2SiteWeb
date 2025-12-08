@@ -119,9 +119,35 @@ async function commander(){
     alert(resultat.message);
 }
 
-function calculerPrix()
+function calculerPrix(commande)
 {
+    let prix = 0;
+
+    if(commande.base == "vanille")
+    {
+        prix += 10;
+    }
+    else
+    {
+        prix += 11;
+    }
+
+    if(commande.glacage != "Vide")
+    {
+        prix += 3;
+    }
+
+    if(commande.cerise)
+    {
+        prix += 1;
+    }
     
+    if(commande.cremeFouettee)
+    {
+        prix += 2;
+    }
+
+    return prix;
 }
 
 
@@ -185,6 +211,7 @@ function creerCartesBS(commandes){
             glacage: ${commandes[i].glacage}\n
             crème fouettée: ${commandes[i].cremeFouettee}\n
             cerise: ${commandes[i].cerise}\n
+            prix: ${calculerPrix(commandes[i])} $\n
             date de commande: ${commandes[i].date}\n
             nom du client: ${commandes[i].nom}\n
             adresse du client: ${commandes[i].adresse}\n
