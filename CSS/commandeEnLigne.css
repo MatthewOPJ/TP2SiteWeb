@@ -1,4 +1,5 @@
-#fabricateurGateau {
+#fabricateurGateau 
+{
     padding: 10px;
     font-size: 24px;
     line-height: 1.5em;
@@ -7,7 +8,8 @@
     background-color: lightgray;
 }
 
-#affichageGateau {
+#affichageGateau 
+{
     width: 33%;
     border-right: 10px;
     border-style: solid;
@@ -17,7 +19,8 @@
     border-left: 0px;
 }
 
-#commande {
+#commande 
+{
     display: flex;
     align-content: center;
 
@@ -29,26 +32,30 @@
     border-color: darkgray;
 }
 
-.imageStack {
+.imageStack 
+{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: relative;
 }
 
-#imgBase {
+#imgBase 
+{
     grid-column: 1;
     grid-row: 1;
     z-index: 1;
     padding-top: 30%;
 }
 
-#imgCremeFouettee {
+#imgCremeFouettee 
+{
     grid-column: 1;
     grid-row: 1;
     z-index: 2;
 }
 
-#imgCerise {
+#imgCerise 
+{
     grid-column: 1;
     grid-row: 1;
     z-index: 3;
@@ -57,7 +64,8 @@
     padding-top: 40%;
 }
 
-.btn {
+.btn 
+{
     background-color: darkblue;
     color: white;
     width: 30%;
@@ -66,22 +74,27 @@
     transition: background-color 0.5s;
 }
 
-.btn:hover {
+.btn:hover 
+{
     background-color: darkcyan;
 }
 
-#saveurDeGlacageChoisie {
+#saveurDeGlacageChoisie 
+{
     font-size: inherit;
 }
 
-#saveurDeBaseChoisie {
+#saveurDeBaseChoisie 
+{
     font-size: inherit;
 }
 
-#nomPrenom {
+#nomPrenom 
+{
     font-size: inherit;
 }
 
-#adresse {
+#adresse 
+{
     font-size: inherit;
 }

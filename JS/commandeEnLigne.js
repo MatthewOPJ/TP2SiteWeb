@@ -90,3 +90,76 @@ async function commander(){
 
     alert(resultat.message);
 }
+
+
+
+async function supprimerCommande(id){
+    const reponse = await fetch("http://localhost:3000/commande/:id", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: document.getElementById(`commande-${id}`)
+    });
+
+    const resultat = await reponse.json();
+
+    alert(resultat.message);
+}
+
+
+async function creerBSCommandes(){
+    const reponse = await fetch("http://localhost:3000/commandes", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    });
+
+    const resultat = await reponse.json();
+    let data = resultat.data;
+    
+    creerCartesBS(data);
+}
+
+function creerCartesBS(commandes){
+    let cards = document.getElementById("cards");
+    let row;
+    let card;
+
+    for(let i = 0; i < commandes.length; i++)
+    {
+        if(i % 3 == 0)
+        {
+            row = document.createElement("div");
+            row.className = "row";
+            cards.appendChild(row);
+        }
+
+        let col = document.createElement("div");
+        col.className = "col-4"
+
+        let titre = document.createElement("h1");
+        titre.className = "card-title";
+        titre.textContent = `commande ${commandes[i].id}`;
+
+        let text = document.createElement("pre");
+        text.className = "card-text";
+        
+        text.textContent = `
+            id: ${commandes[i].id}\n
+            base: ${commandes[i].base}\n
+            glacage: ${commandes[i].glacage}\n
+            crème fouettée: ${commandes[i].cremeFouettee}\n
+            cerise: ${commandes[i].cerise}\n
+            date de commande: ${commandes[i].date}\n
+            nom du client: ${commandes[i].nom}\n
+            adresse du client: ${commandes[i].adresse}\n
+        `;
+
+        card = document.createElement("div");
+        card.className = "card w-100 commande";
+        card.id = `commande-${commandes[i].id}`;
+
+        row.appendChild(col);
+        card.appendChild(titre);
+        card.appendChild(text);
+        col.appendChild(card);
+    }
+}
