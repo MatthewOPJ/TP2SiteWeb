@@ -129,5 +129,19 @@
 
 .commande 
 {
-    color: red
+    border-radius: 10px;
+    border: 3px orange solid;
+    background-color: lightgrey;
+}
+
+.commande h1
+{
+    text-align: center;
+}
+
+.btn-supprimer
+{
+    align-self: center;
+    height: 35px;
+    margin-bottom: 10px;
 }

@@ -94,13 +94,17 @@ async function commander(){
 
 
 async function supprimerCommande(id){
-    const reponse = await fetch("http://localhost:3000/commande/:id", {
+    const reponse = await fetch(`http://localhost:3000/commandes/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        body: document.getElementById(`commande-${id}`)
+        body: JSON.stringify({id: id})
     });
 
     const resultat = await reponse.json();
+
+    let commande = document.getElementById(`commande-${id}`);
+    commande.innerText = "Commande supprimée";
+
 
     alert(resultat.message);
 }
@@ -157,9 +161,15 @@ function creerCartesBS(commandes){
         card.className = "card w-100 commande";
         card.id = `commande-${commandes[i].id}`;
 
+        let btn = document.createElement("button");
+        btn.className = "btn btn-danger card-bottom w-50 btn-supprimer";
+        btn.innerHTML = "Supprimer";
+        btn.onclick = () => {supprimerCommande(commandes[i].id)};
+
         row.appendChild(col);
         card.appendChild(titre);
         card.appendChild(text);
+        card.appendChild(btn);
         col.appendChild(card);
     }
 }

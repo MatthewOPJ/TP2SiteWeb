@@ -2,6 +2,8 @@ const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
 
+
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -20,14 +22,18 @@ app.get("/commandes", (req, res) => {
 
 app.delete("/commandes/:id", (req, res) => {
     for(let i = 0; i < donnees.length; i++){
-        if(donnees[i].id == req){
+        if(donnees[i].id == req.body.id){
             donnees.splice(i, 1);
-            res = {
+            res.json({
                 message: "Commande supprimée!"
-            };
-            break;
+            });
+            return;
         }
     }
+    res.json({
+        message: "Commande introuvable..."
+    })
+    // not found
 })
 
 app.post("/commande", (req, res) => {
