@@ -64,21 +64,6 @@
     padding-top: 40%;
 }
 
-.btn 
-{
-    background-color: darkblue;
-    color: white;
-    width: 30%;
-    height: 10%;
-    font-size: inherit;
-    transition: background-color 0.5s;
-}
-
-.btn:hover 
-{
-    background-color: darkcyan;
-}
-
 #saveurDeGlacageChoisie 
 {
     font-size: inherit;

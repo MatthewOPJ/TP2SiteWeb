@@ -119,6 +119,11 @@ async function commander(){
     alert(resultat.message);
 }
 
+function calculerPrix()
+{
+    
+}
+
 
 
 async function supprimerCommande(id){
